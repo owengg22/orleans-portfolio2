@@ -1,0 +1,41 @@
+import pandas as pd
+from scipy.io import arff
+
+
+arff_file = arff.loadarff(r"C:\Users\ASUS ROG\Downloads\eeg+eye+state\EEG Eye State.arff")
+df = pd.DataFrame(arff_file[0])
+
+df.head()
+
+from sklearn.preprocessing import LabelEncoder
+le = LabelEncoder()
+df['eyeDetection'] = le.fit_transform(df['eyeDetection'])
+print(df)
+
+X = df.drop(['eyeDetection'],axis='columns')
+y = df.drop(['AF3','F7','F3','FC5','T7','P7','O1','O2','P8','T8','FC6','F4','F8','AF4'],axis='columns')
+print (X)
+
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score, f1_score, matthews_corrcoef, precision_score, recall_score,classification_report, confusion_matrix
+
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=4)
+
+from sklearn.neighbors import KNeighborsClassifier
+
+knn = KNeighborsClassifier(n_neighbors=3)
+knn.fit(X_train, y_train)
+
+y_pred = knn.predict (X_test)
+y_pred
+
+knn.predict_proba(X_test)
+print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
+print("Accuracy:", accuracy_score(y_test, y_pred))
+print("Precision:", precision_score(y_test, y_pred, average='weighted'))
+print("Recall:", recall_score(y_test, y_pred, average='weighted'))
+print("F1-score:", f1_score(y_test, y_pred, average='weighted'))
+print("Classification Report:\n", classification_report(y_test, y_pred))
+print("MCC:", matthews_corrcoef(y_test, y_pred))
+print('akurasi knn : {:.2f}%'.format(accuracy_score(y_test, y_pred)*100))

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Orleans Owen Syah</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  </head>
+
+  <body>
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+      <h1 class="logo">newsproasnoe.</h1>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="text">
+        <p>What's Up Guys, I'm</p>
+        <h1>Orleans Owen Syah</h1>
+        <h2><span id="typing"></span></h2>
+        <p>Welcome to my personal website</p>
+        <p>Feel free to explore and know more about me!</p>
+
+        <!-- SOCIAL LINKS -->
+        <div class="social-area">
+          <div class="social-links">
+            <a href="https://instagram.com/newsproasnoe" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://wa.me/6281223231145" target="_blank"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+            <a href="https://discord.com/users/newsproasnoe" target="_blank"
+              ><i class="fab fa-discord"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/orleans-owen-syah-7969832b8"
+              target="_blank"
+            >
+              <i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+        </div>
+        <!-- DOWNLOAD CV BUTTON (posisi di bawah sosial media) -->
+        <a href="NewCV_Orleans Owen Syah.pdf" download class="cv-btn">
+          <i class="fa-solid fa-download"></i> Download My CV
+        </a>
+      </div>
+
+      <div class="photo">
+        <img src="profile.jpg" alt="profile" />
+      </div>
+    </section>
+
+    <!-- SCRIPT ENTRY ANIMATION -->
+    <script>
+      // Animasi masuk
+      window.addEventListener("load", () => {
+        const text = document.querySelector(".text");
+        const photo = document.querySelector(".photo");
+        text.classList.add("active");
+        photo.classList.add("active");
+      });
+
+      // Navbar efek scroll
+      window.addEventListener("scroll", () => {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      // Efek ngetik
+      const typed = new Typed("#typing", {
+        strings: [
+          "Web Developer",
+          "Biomedical Engineering",
+          "Institut Teknologi Sepuluh Nopember",
+          "IoT Enthusiast",
+        ],
+        typeSpeed: 100,
+        backSpeed: 60,
+        backDelay: 1500,
+        loop: true,
+        showCursor: true,
+        cursorChar: "|",
+      });
+    </script>
+  </body>
+</html>

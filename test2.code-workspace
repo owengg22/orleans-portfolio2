@@ -1,0 +1,27 @@
+{
+	"folders": [
+		{
+			"name": "test2",
+			"path": "C:/Users/M S I/Documents/PlatformIO/Projects/test2"
+		},
+		{
+			"name": "250805-122519-esp32dev",
+			"path": "C:/Users/M S I/Documents/PlatformIO/Projects/250805-122519-esp32dev"
+		},
+		{
+			"path": "C:/Users/M S I/Documents/belajar"
+		},
+		{
+			"path": "C:/Users/M S I/Documents/belajar/belajar2/.vscode/belajar"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../webdev"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "HTML"
+	}
+}

@@ -1,0 +1,21 @@
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: navy;
+  margin-left: 20px;
+  font-family: Arial, sans-serif;
+  margin-right: auto;
+  margin-left: auto;
+}
+img {
+  display: block;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+}
+ol {
+  padding: 20px;
+  border-radius: 5px;
+}
